@@ -1,15 +1,5 @@
 @php
 $hasActiveLicense = true;
-if(isLoggedIn() and (request()->route()->getName() != 'manage.configuration.product_registration') and
-(!getAppSettings('product_registration', 'registration_id') or sha1(array_get($_SERVER, 'HTTP_HOST', '') .
-getAppSettings('product_registration', 'registration_id') . '4.5+') !== getAppSettings('product_registration',
-'signature'))) {
-$hasActiveLicense = false;
-if(hasCentralAccess()) {
-header("Location: " . route('manage.configuration.product_registration'));
-exit;
-}
-}
 $currentAppTheme ='';
  // Default theme from settings
  $currentAppTheme = getUserAppTheme()
