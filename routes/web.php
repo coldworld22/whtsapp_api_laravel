@@ -3,7 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
-use App\Yantrana\Components\Home\Controllers\HomeController;
 use App\Yantrana\Components\Page\Controllers\PageController;
 use App\Yantrana\Components\User\Controllers\UserController;
 use App\Yantrana\Components\Media\Controllers\MediaController;
@@ -35,10 +34,9 @@ use App\Yantrana\Components\WhatsAppService\Controllers\WhatsAppTemplateControll
 |
 */
 
-Route::get('/', [
-    HomeController::class,
-    'homePageView',
-])->name('landing_page');
+Route::get('/', function () {
+    return Redirect::route('auth.login');
+})->name('landing_page');
 // user console
 Route::get('/console', function () {
     return hasCentralAccess() ? Redirect::route('central.console') : Redirect::route('vendor.console');
