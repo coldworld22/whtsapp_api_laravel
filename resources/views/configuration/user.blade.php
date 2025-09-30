@@ -87,13 +87,10 @@
 		<div class="col-sm-12 mb-3 mb-sm-0">
 			<label for="lwPrivacy PolicyTerms"><?= __tr('Privacy Policy') ?></label>
 			<textarea rows="10" name="privacy_policy" class="form-control form-control-user" id="lwPrivacy PolicyTerms"><?= getAppSettings('privacy_policy') ?></textarea>
-            <small class="form-text text-muted">{{  __tr('It will be your Privacy Policy') }}</small>
+            <small class="form-text text-muted d-block">{{  __tr('It will be your Privacy Policy') }}</small>
+            <small class="form-text text-muted">{{  __tr("A default template is provided below—feel free to customise this text to reflect your organisation's practices.") }}</small>
             <div class="my-3 text-muted">
-                <small>{{ __tr('Public link : ') }} <a target="_blank" href="{{ route('app.terms_and_policies', [
-                    'contentName' => 'privacy_policy'
-                ]) }}">{{ route('app.terms_and_policies', [
-                    'contentName' => 'privacy_policy'
-                ]) }}</a></small>
+                <small>{{ __tr('Public link : ') }} <a target="_blank" href="{{ route('app.privacy_policy') }}">{{ route('app.privacy_policy') }}</a></small>
             </div>
 		</div>
 		<!-- / Privacy Policy Terms -->

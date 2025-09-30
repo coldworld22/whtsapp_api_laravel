@@ -162,7 +162,14 @@ return [
             'privacy_policy' => [
                 'key' => 'privacy_policy',
                 'data_type' => 1,    // string
-                'default' => '',
+                'default' => view('policies.privacy-policy-default', [
+                    'contentName' => 'privacy_policy',
+                    'contentTitle' => 'Privacy Policy',
+                    'appName' => config('app.name', 'Our Application'),
+                    'supportEmail' => config('mail.from.address', 'support@example.com'),
+                    'appUrl' => config('app.url', ''),
+                    'businessAddress' => config('app.business_address', ''),
+                ])->render(),
             ],
         ],
         'currency' => [
