@@ -150,7 +150,7 @@ class HomeController extends BaseController
         ]);
     }
 
-    public function viewPrivacyPolicy()
+    public function privacyPolicy()
     {
         return $this->viewTermsAndPolicies('privacy_policy');
     }
