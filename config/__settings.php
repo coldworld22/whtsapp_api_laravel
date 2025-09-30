@@ -176,6 +176,7 @@ return [
                     . '<p>You have the right to access, update, or delete your personal information, and you can manage your communication preferences at any time. Depending on your jurisdiction, you may have additional rights related to data portability or objections to certain processing activities.</p>' . "\n"
                     . '<h3>Contact Us</h3>' . "\n"
                     . '<p>If you have questions about this Privacy Policy or would like to exercise your privacy rights, please contact the ' . env('APP_NAME', 'Your Company Name') . ' team at our published support channels or by emailing our support team. We will respond promptly to address your concerns.</p>',
+
             ],
         ],
         'currency' => [

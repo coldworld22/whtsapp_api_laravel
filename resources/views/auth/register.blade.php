@@ -135,9 +135,7 @@
                                             ]) }}">{{ __tr('Vendor Terms And Conditions') }}</a>,
                                             @endif
                                             @if (getAppSettings('privacy_policy'))
-                                            <a class="text-success" href="{{ route('app.terms_and_policies', [
-                                                'contentName' => 'privacy_policy'
-                                            ]) }}">{{
+                                            <a class="text-success" href="{{ route('privacy.policy') }}">{{
                                                 __tr('Privacy Policy')
                                                 }}</a>
                                             @endif

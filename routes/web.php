@@ -3,11 +3,14 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
+use App\Yantrana\Components\Home\Controllers\HomeController;
 use App\Yantrana\Components\Page\Controllers\PageController;
+use App\Yantrana\Components\Home\Controllers\HomeController;
 use App\Yantrana\Components\User\Controllers\UserController;
 use App\Yantrana\Components\Media\Controllers\MediaController;
 use App\Yantrana\Components\Vendor\Controllers\VendorController;
 use App\Yantrana\Components\Contact\Controllers\ContactController;
+use App\Yantrana\Components\Home\Controllers\HomeController;
 use App\Yantrana\Components\BotReply\Controllers\BotFlowController;
 use App\Yantrana\Components\BotReply\Controllers\BotReplyController;
 use App\Yantrana\Components\Campaign\Controllers\CampaignController;
@@ -1333,6 +1336,11 @@ Route::get('/terms-and-policies/{contentName?}', [
     HomeController::class,
     'viewTermsAndPolicies',
 ])->name('app.terms_and_policies');
+
+Route::get('/privacy-policy', [
+    HomeController::class,
+    'privacyPolicy',
+])->name('privacy.policy');
 // whatsapp qr code
 Route::get('/whatsapp-qr/{vendorUid}/{phoneNumber}', [
     HomeController::class,
