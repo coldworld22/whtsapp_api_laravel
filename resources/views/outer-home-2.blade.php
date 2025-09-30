@@ -759,7 +759,7 @@ $appName = getAppSettings('name');
                                     <li><a href="#"> {{ __tr('Our Services') }}</a></li>
                                     <li><a href="{{ route('app.terms_and_policies', ['contentName' => 'privacy_policy']) }}"> {{ __tr('Privacy policy') }}</a></li>
                                     <li><a href="{{ route('app.terms_and_policies', ['contentName' => 'user_terms']) }}"> {{ __tr('terms and conditions') }}</a></li>
-                                </ul>
+                   </ul>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
