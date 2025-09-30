@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
+use App\Yantrana\Components\Home\Controllers\HomeController;
 use App\Yantrana\Components\Page\Controllers\PageController;
 use App\Yantrana\Components\User\Controllers\UserController;
 use App\Yantrana\Components\Media\Controllers\MediaController;
@@ -1333,6 +1334,10 @@ Route::get('/terms-and-policies/{contentName?}', [
     HomeController::class,
     'viewTermsAndPolicies',
 ])->name('app.terms_and_policies');
+Route::get('/privacy-policy', [
+    HomeController::class,
+    'privacyPolicy',
+])->name('app.privacy_policy');
 // whatsapp qr code
 Route::get('/whatsapp-qr/{vendorUid}/{phoneNumber}', [
     HomeController::class,
