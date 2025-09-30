@@ -6,7 +6,7 @@
         <div class="col-lg-12 col-md-8">
             <div class="card shadow border-0">
                 <h1 class="card-header text-center">
-                    {{  str_replace('_',' ', Str::title($validItems[$contentName])) }}
+                    {{  str_replace('_',' ', \Illuminate\Support\Str::title($validItems[$contentName])) }}
                 </h1>
                 @php
                     $rawContent = getAppSettings($contentName);

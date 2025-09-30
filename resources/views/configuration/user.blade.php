@@ -90,7 +90,7 @@
             <small class="form-text text-muted d-block">{{  __tr('It will be your Privacy Policy') }}</small>
             <small class="form-text text-muted">{{  __tr("A default template is provided below—feel free to customise this text to reflect your organisation's practices.") }}</small>
             <div class="my-3 text-muted">
-                <small>{{ __tr('Public link : ') }} <a target="_blank" href="{{ route('app.privacy_policy') }}">{{ route('app.privacy_policy') }}</a></small>
+                <small>{{ __tr('Public link : ') }} <a target="_blank" href="{{ route('privacy.policy') }}">{{ route('privacy.policy') }}</a></small>
             </div>
 		</div>
 		<!-- / Privacy Policy Terms -->
