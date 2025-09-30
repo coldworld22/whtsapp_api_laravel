@@ -162,7 +162,52 @@ return [
             'privacy_policy' => [
                 'key' => 'privacy_policy',
                 'data_type' => 1,    // string
-                'default' => '',
+                'default' => <<<'HTML'
+<h1>Privacy Policy</h1>
+<p>Last updated: <em>[Insert Date]</em></p>
+
+<h2>1. Introduction</h2>
+<p>This Privacy Policy explains how <strong>[Company Name]</strong> ("we", "us" or "our") collects, uses, stores and protects your personal information when you use our services. Please read this policy carefully and contact us if you have any questions.</p>
+
+<h2>2. Information We Collect</h2>
+<p>We may collect the following types of information:</p>
+<ul>
+    <li><strong>Account information:</strong> Details you provide when creating or managing an account, such as your name, email address and phone number.</li>
+    <li><strong>Usage data:</strong> Information about how you access and use our services, including device information, log files and analytics data.</li>
+    <li><strong>Communications:</strong> Copies of messages or requests you send to us, including any attachments or additional contact information you choose to share.</li>
+</ul>
+
+<h2>3. How We Use Information</h2>
+<p>We use the collected information to:</p>
+<ul>
+    <li>Deliver, maintain and improve our products and services.</li>
+    <li>Personalise your experience and respond to your requests or questions.</li>
+    <li>Send important service updates, security alerts and administrative messages.</li>
+    <li>Comply with legal obligations and enforce our terms of service.</li>
+</ul>
+
+<h2>4. Sharing and Disclosure</h2>
+<p>We do not sell your personal information. We may share your information with trusted service providers that assist us in operating our services, subject to confidentiality obligations. We may also disclose information if required by law or to protect our rights and the safety of others.</p>
+
+<h2>5. Data Retention</h2>
+<p>We retain personal information only for as long as necessary to fulfil the purposes outlined in this policy, unless a longer retention period is required or permitted by law.</p>
+
+<h2>6. Your Rights</h2>
+<p>Depending on your location, you may have rights to access, correct or delete your personal information, or to object to certain processing activities. To exercise these rights, please contact us using the details below.</p>
+
+<h2>7. Security</h2>
+<p>We implement appropriate technical and organisational measures to protect your information. However, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+
+<h2>8. Third-Party Links</h2>
+<p>Our services may contain links to third-party websites or applications. We are not responsible for the privacy practices or the content of those third parties, and we encourage you to review their privacy policies.</p>
+
+<h2>9. Updates to This Policy</h2>
+<p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. When we do, we will revise the "Last updated" date above. Your continued use of our services after any changes indicates your acceptance of the updated policy.</p>
+
+<h2>10. Contact Us</h2>
+<p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at <a href="mailto:privacy@example.com">privacy@example.com</a> or <a href="mailto:support@example.com">support@example.com</a>.</p>
+
+HTML,
             ],
         ],
         'currency' => [
