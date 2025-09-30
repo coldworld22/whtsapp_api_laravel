@@ -150,6 +150,11 @@ class HomeController extends BaseController
         ]);
     }
 
+    public function privacyPolicy()
+    {
+        return $this->viewTermsAndPolicies('privacy_policy');
+    }
+
     public function generateWhatsAppQR($vendorUid = null, $phoneNumber = null)
     {
         if(!$vendorUid or !$phoneNumber) {
