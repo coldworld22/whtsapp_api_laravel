@@ -1335,7 +1335,11 @@ Route::get('/terms-and-policies/{contentName?}', [
     HomeController::class,
     'viewTermsAndPolicies',
 ])->name('app.terms_and_policies');
-Route::view('/privacy-policy', 'privacy-policy')->name('app.privacy_policy');
+
+Route::get('/privacy-policy', [
+    HomeController::class,
+    'viewPrivacyPolicy',
+])->name('app.privacy_policy');
 // whatsapp qr code
 Route::get('/whatsapp-qr/{vendorUid}/{phoneNumber}', [
     HomeController::class,
