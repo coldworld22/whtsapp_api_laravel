@@ -162,7 +162,20 @@ return [
             'privacy_policy' => [
                 'key' => 'privacy_policy',
                 'data_type' => 1,    // string
-                'default' => '',
+                'default' => '<h2>Privacy Policy for ' . env('APP_NAME', 'Your Company Name') . "</h2>\n"
+                    . '<p>At ' . env('APP_NAME', 'Your Company Name') . ', we are committed to protecting your personal information and ensuring transparency about how we handle your data. This Privacy Policy describes the information we collect, how we use it, and the choices available to you.</p>' . "\n"
+                    . '<h3>Information We Collect</h3>' . "\n"
+                    . '<p>We collect personal details such as your name, email address, contact information, payment information, communications, and any other data you choose to share when using our services. We may also gather technical data including IP addresses, device identifiers, browser types, and usage logs to help us maintain and improve our platform.</p>' . "\n"
+                    . '<h3>How We Use Your Information</h3>' . "\n"
+                    . '<p>Your information is used to provide, personalize, and improve the services offered by ' . env('APP_NAME', 'Your Company Name') . ', including processing transactions, delivering customer support, sending important updates, and ensuring the security and integrity of our systems. We may also use aggregated data to analyze trends and enhance user experience.</p>' . "\n"
+                    . '<h3>Data Retention</h3>' . "\n"
+                    . '<p>We retain your information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, comply with legal obligations, resolve disputes, and enforce our agreements. When data is no longer needed, we take reasonable steps to delete or anonymize it.</p>' . "\n"
+                    . '<h3>Third-Party Sharing</h3>' . "\n"
+                    . '<p>We do not sell your personal information. We may share data with trusted third-party service providers who assist us in operating ' . env('APP_NAME', 'Your Company Name') . ', processing payments, delivering communications, or providing analytics. These partners are contractually obligated to protect your data and may only use it as directed by us.</p>' . "\n"
+                    . '<h3>Your Choices and Rights</h3>' . "\n"
+                    . '<p>You have the right to access, update, or delete your personal information, and you can manage your communication preferences at any time. Depending on your jurisdiction, you may have additional rights related to data portability or objections to certain processing activities.</p>' . "\n"
+                    . '<h3>Contact Us</h3>' . "\n"
+                    . '<p>If you have questions about this Privacy Policy or would like to exercise your privacy rights, please contact the ' . env('APP_NAME', 'Your Company Name') . ' team at our published support channels or by emailing our support team. We will respond promptly to address your concerns.</p>',
             ],
         ],
         'currency' => [
