@@ -21,6 +21,18 @@ services:
             - mysql
             - redis
             # - selenium
+    nginx:
+        image: 'nginx:alpine'
+        ports:
+            - '80:80'
+            - '443:443'
+        volumes:
+            - './docker/nginx/whatsappapi.conf:/etc/nginx/conf.d/whatsappapi.conf:ro'
+            - '/etc/letsencrypt:/etc/letsencrypt:ro'
+        depends_on:
+            - laravel.test
+        networks:
+            - sail
     # selenium:
     #     image: 'selenium/standalone-chrome'
     #     volumes:
