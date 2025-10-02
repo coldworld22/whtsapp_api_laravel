@@ -137,7 +137,7 @@ Route::middleware([
             })->name('central.vendors');
 
             Route::get('/{vendorIdOrUid}/details', [
-                vendorController::class,
+                VendorController::class,
                 'vendorDetails',
             ])->name('central.vendor.details');
 
@@ -328,40 +328,40 @@ Route::middleware([
             Route::prefix('/vendors')->group(function () {
 
                 Route::post('/list-data/{vendorIdOrUid}', [
-                    vendorController::class,
+                    VendorController::class,
                     'prepareVendorDelete',
                 ])->name('vendor.delete');
                 //Vendor permanant delete
                 Route::post('/vendor-delete/{vendorIdOrUid}', [
-                    vendorController::class,
+                    VendorController::class,
                     'prepareVendorPermanentDelete',
                 ])->name('vendor.permanant.delete');
 
                 // Vendor get the data
                 Route::get('/get-update-data/{vendorIdOrUid}', [
-                    vendorController::class,
+                    VendorController::class,
                     'prepareUpdateVendorData',
                 ])->name('vendor.read.update.data');
                 // Vendor get the data
                 Route::post('/update-vendor-data', [
-                    vendorController::class,
+                    VendorController::class,
                     'updateVendorData',
                 ])->name('vendor.write.update');
                 // route for change password button on author side .
                 Route::get('/{vendorIdOrUid}/get-change-password-vendor', [
-                    vendorController::class,
+                    VendorController::class,
                     'changePasswordVendorData',
                 ])->name('vendor.change.password.data');
 
                 // route for change password button on super-admin side .
                 Route::post('/change-password-vendor', [
-                    vendorController::class,
+                    VendorController::class,
                     'changePasswordVendor',
                 ])->name('auth.vendor.change.password');
 
                 // Vendor-dashboard
                 Route::get('/{vendorIdOrUid}/dashboard', [
-                    vendorController::class,
+                    VendorController::class,
                     'vendorDashboard',
                 ])->name('vendor.dashboard');
             });
