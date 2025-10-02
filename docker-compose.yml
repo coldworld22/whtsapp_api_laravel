@@ -63,6 +63,18 @@ services:
             - 'sailredis:/data'
         networks:
             - sail
+    reverse-proxy:
+        image: 'nginx:alpine'
+        ports:
+            - '80:80'
+            - '443:443'
+        volumes:
+            - './infrastructure/nginx:/etc/nginx/conf.d:ro'
+            - '/etc/letsencrypt:/etc/letsencrypt:ro'
+        depends_on:
+            - laravel.test
+        networks:
+            - sail
     # memcached:
     #     image: 'memcached:alpine'
     #     ports:
