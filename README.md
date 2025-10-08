@@ -26,6 +26,28 @@ This repository contains a Laravel project for integrating with the WhatsApp Bus
 
 ## Troubleshooting
 
+### Browser reports "Your connection is not private"
+
+If you open <https://whatsappapi.eduskillbridge.net> and the browser shows `NET::ERR_CERT_COMMON_NAME_INVALID`, the TLS
+certificate that Nginx is presenting does not match the domain. Regenerating the Let's Encrypt certificate for the
+specific subdomain resolves the warning:
+
+1. Ensure the DNS record for `whatsappapi.eduskillbridge.net` points to the server running this project and that ports 80
+   and 443 are reachable from the public internet.
+2. SSH into the server and request a new certificate for the subdomain. When using Certbot with the Nginx plugin the
+   command looks like:
+   ```bash
+   sudo certbot certonly --nginx -d whatsappapi.eduskillbridge.net
+   ```
+   Certbot will update `/etc/letsencrypt/live/whatsappapi.eduskillbridge.net/` with a certificate whose Common Name and
+   Subject Alternative Name both include the subdomain.
+3. Confirm that the Nginx configuration at `infrastructure/nginx/whatsappapi.conf` references the updated
+   `fullchain.pem` and `privkey.pem` files, then reload Nginx:
+   ```bash
+   sudo systemctl reload nginx
+   ```
+4. Revisit the site in the browser. The page should now load without a certificate warning.
+
 ### Composer SSL certificate error on Windows
 
 When running `composer install` on Windows environments (for example when using WAMP or XAMPP) you may encounter an error similar to:
